@@ -7,7 +7,6 @@ QWEN_URL = "http://127.0.0.1:11434/v1/chat/completions"
 QWEN_URL_FALLBACK = "http://127.0.0.1:8080/"
 QWEN_MODEL = "qwen3-coder-reap:latest"
 
-
 def _post_qwen(dados, timeout=120):
     erros = []
 
