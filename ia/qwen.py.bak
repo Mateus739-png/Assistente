@@ -1,0 +1,244 @@
+import requests
+import base64
+from io import BytesIO
+from PIL import Image
+
+QWEN_URL = "http://localhost:8080/v1/chat/completions"
+QWEN_MODEL = "Qwen_Qwen2.5-VL-7B-Instruct-Q4_K_M.gguf"
+
+
+def perguntar(texto):
+    dados = {
+        "model": QWEN_MODEL,
+        "messages": [
+            {
+                "role": "system",
+                "content": (
+                    "Você é Jarvis, um assistente pessoal brasileiro. "
+                    "Fale sempre em português do Brasil. "
+                    "Converse de forma natural, descontraída e direta, "
+                    "como uma pessoa falando com outra. "
+                    "Não seja excessivamente formal. "
+                    "Não fique repetindo explicações desnecessárias. "
+                    "Quando a pergunta for simples, responda de forma simples."
+                )
+            },
+            {
+                "role": "user",
+                "content": texto
+            }
+        ],
+        "max_tokens": 300
+    }
+
+    resposta = requests.post(
+        QWEN_URL,
+        json=dados,
+        timeout=120
+    )
+
+    resposta.raise_for_status()
+
+    return resposta.json()["choices"][0]["message"]["content"]
+
+
+def resumir_pesquisa(pergunta, resultados):
+    contexto = ""
+
+    for i, resultado in enumerate(resultados, 1):
+        contexto += (
+            f"\nResultado {i}:\n"
+            f"Título: {resultado['titulo']}\n"
+            f"Descrição: {resultado['texto']}\n"
+        )
+
+    dados = {
+        "model": QWEN_MODEL,
+        "messages": [
+            {
+                "role": "system",
+                "content": (
+                    "Você é Jarvis, um assistente pessoal brasileiro. "
+                    "Responda em português do Brasil. "
+                    "Analise os resultados de pesquisa fornecidos. "
+                    "Faça um resumo curto, natural e útil. "
+                    "Não invente informações que não estejam nos resultados."
+                )
+            },
+            {
+                "role": "user",
+                "content": (
+                    f"Pesquisei na internet sobre: {pergunta}\n\n"
+                    f"{contexto}\n\n"
+                    "Faça um resumo útil para o usuário."
+                )
+            }
+        ],
+        "max_tokens": 350
+    }
+
+    resposta = requests.post(
+        QWEN_URL,
+        json=dados,
+        timeout=120
+    )
+
+    resposta.raise_for_status()
+
+    return resposta.json()["choices"][0]["message"]["content"]
+def resolver_pesquisa_memoria(pergunta, memorias):
+    contexto = "\n".join(
+        f"- {memoria}"
+        for memoria in memorias
+    )
+
+    dados = {
+        "model": QWEN_MODEL,
+        "messages": [
+            {
+                "role": "system",
+                "content": (
+                    "Você é um assistente que transforma referências "
+                    "do usuário em termos de pesquisa. "
+                    "Use exclusivamente as informações da memória fornecida. "
+                    "Retorne SOMENTE o termo que deve ser pesquisado na internet. "
+                    "Não explique nada. "
+                    "Não use frases como 'pesquisar', 'informações sobre' ou 'o usuário'."
+                )
+            },
+            {
+                "role": "user",
+                "content": (
+                    f"Pedido do usuário: {pergunta}\n\n"
+                    f"Memória:\n{contexto}\n\n"
+                    "Qual termo específico deve ser pesquisado?"
+                )
+            }
+        ],
+        "max_tokens": 50
+    }
+
+    resposta = requests.post(
+        QWEN_URL,
+        json=dados,
+        timeout=120
+    )
+
+    resposta.raise_for_status()
+
+    return resposta.json()["choices"][0]["message"]["content"].strip()
+
+def responder_com_memoria(pergunta, memorias):
+    contexto = "\n".join(
+        f"- {memoria}"
+        for memoria in memorias
+    )
+
+    dados = {
+        "model": QWEN_MODEL,
+        "messages": [
+            {
+                "role": "system",
+                "content": (
+                    "Você é Jarvis, um assistente pessoal brasileiro. "
+                    "Responda em português do Brasil. "
+                    "Use somente as informações da memória fornecida. "
+                    "Responda de forma natural, curta e direta. "
+                    "Se a memória não tiver a resposta, diga que não sabe. "
+                    "Nunca invente informações."
+                )
+            },
+            {
+                "role": "user",
+                "content": (
+                    f"Pergunta: {pergunta}\n\n"
+                    f"Memória disponível:\n{contexto}\n\n"
+                    "Responda à pergunta."
+                )
+            }
+        ],
+        "max_tokens": 150
+    }
+
+    resposta = requests.post(
+        QWEN_URL,
+        json=dados,
+        timeout=120
+    )
+
+    resposta.raise_for_status()
+
+    return resposta.json()["choices"][0]["message"]["content"]
+
+# ==========================================================
+# ANÁLISE DE IMAGEM
+# ==========================================================
+
+def analisar_imagem(caminho, pergunta):
+
+    imagem = Image.open(caminho).convert("RGB")
+
+    # Reduz bastante a imagem para acelerar o Qwen-VL
+    imagem.thumbnail(
+        (1280, 720),
+        Image.Resampling.LANCZOS
+    )
+
+    buffer = BytesIO()
+
+    imagem.save(
+        buffer,
+        format="JPEG",
+        quality=60,
+        optimize=True
+    )
+
+    imagem_base64 = base64.b64encode(
+        buffer.getvalue()
+    ).decode("utf-8")
+
+    dados = {
+        "model": QWEN_MODEL,
+        "messages": [
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "text",
+                        "text": pergunta
+                    },
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": (
+                                "data:image/jpeg;base64,"
+                                + imagem_base64
+                            )
+                        }
+                    }
+                ]
+            }
+        ],
+        "max_tokens": 80,
+        "temperature": 0.1
+    }
+
+    resposta = requests.post(
+        QWEN_URL,
+        json=dados,
+        timeout=600
+    )
+
+    if not resposta.ok:
+        print()
+        print("❌ ERRO DO QWEN-VL")
+        print("Status:", resposta.status_code)
+        print("Resposta do servidor:")
+        print(resposta.text)
+        print()
+
+        return "Não consegui analisar a imagem."
+
+    resultado = resposta.json()
+
+    return resultado["choices"][0]["message"]["content"].strip()

@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1789789583,
+        "data_hora": "2026-09-19T10:00:00",
+        "descricao": "Estudar JavaScript",
+        "aviso": 5,
+        "avisado": true
+    },
+    {
+        "id": 1789790462,
+        "data_hora": "2026-09-19T01:02:02",
+        "descricao": "TESTE DA AGENDA",
+        "aviso": 0,
+        "avisado": true
+    },
+    {
+        "id": 1789790517,
+        "data_hora": "2026-09-19T01:02:57",
+        "descricao": "TESTE DA AGENDA",
+        "aviso": 0,
+        "avisado": true
+    },
+    {
+        "id": 1789790617,
+        "data_hora": "2026-09-19T01:04:37",
+        "descricao": "TESTE DA AGENDA",
+        "aviso": 0,
+        "avisado": true
+    },
+    {
+        "id": 1789790789,
+        "data_hora": "2026-09-19T01:07:29",
+        "descricao": "TESTE DE VOZ DA AGENDA",
+        "aviso": 0,
+        "avisado": true
+    }
+]

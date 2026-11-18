@@ -1,0 +1,110 @@
+﻿import os
+import re
+import requests
+import webbrowser
+from datetime import datetime
+
+QWEN_URL = "http://localhost:11434/v1/chat/completions"
+QWEN_MODEL = "qwen3-coder-reap:latest"
+
+PASTA_SITES = r"C:\Users\User\Downloads\Assistente\sites"
+
+
+def criar_site(descricao):
+
+    prompt = f"""
+Crie um site completo baseado nesta solicitaÃ§Ã£o:
+
+{descricao}
+
+Gere exatamente 3 arquivos:
+
+===HTML===
+[cÃ³digo completo do index.html]
+
+===CSS===
+[cÃ³digo completo do style.css]
+
+===JS===
+[cÃ³digo completo do script.js]
+
+NÃ£o coloque explicaÃ§Ãµes fora desses trÃªs blocos.
+NÃ£o use markdown.
+O HTML deve importar style.css e script.js.
+"""
+
+    resposta = requests.post(
+        QWEN_URL,
+        json={
+            "model": QWEN_MODEL,
+            "messages": [
+                {
+                    "role": "system",
+                    "content": (
+                        "VocÃª Ã© um desenvolvedor web especialista. "
+                        "Crie sites modernos, bonitos e funcionais."
+                    )
+                },
+                {
+                    "role": "user",
+                    "content": prompt
+                }
+            ],
+            "max_tokens": 5000
+        },
+        timeout=180
+    )
+
+    resposta.raise_for_status()
+
+    texto = resposta.json()["choices"][0]["message"]["content"]
+
+    html = re.search(
+        r"===HTML===\s*(.*?)\s*===CSS===",
+        texto,
+        re.DOTALL
+    )
+
+    css = re.search(
+        r"===CSS===\s*(.*?)\s*===JS===",
+        texto,
+        re.DOTALL
+    )
+
+    js = re.search(
+        r"===JS===\s*(.*)",
+        texto,
+        re.DOTALL
+    )
+
+    if not html or not css or not js:
+        return "NÃ£o consegui organizar o cÃ³digo gerado pelo Qwen."
+
+    html = html.group(1).strip()
+    css = css.group(1).strip()
+    js = js.group(1).strip()
+
+    # Remove possÃ­veis blocos markdown
+    html = html.replace("```html", "").replace("```", "").strip()
+    css = css.replace("```css", "").replace("```", "").strip()
+    js = js.replace("```javascript", "").replace("```js", "").replace("```", "").strip()
+
+    nome = datetime.now().strftime("site_%Y%m%d_%H%M%S")
+
+    pasta = os.path.join(PASTA_SITES, nome)
+    os.makedirs(pasta, exist_ok=True)
+
+    arquivo_html = os.path.join(pasta, "index.html")
+
+    with open(os.path.join(pasta, "index.html"), "w", encoding="utf-8") as arquivo:
+        arquivo.write(html)
+
+    with open(os.path.join(pasta, "style.css"), "w", encoding="utf-8") as arquivo:
+        arquivo.write(css)
+
+    with open(os.path.join(pasta, "script.js"), "w", encoding="utf-8") as arquivo:
+        arquivo.write(js)
+
+    webbrowser.open("file:///" + arquivo_html.replace("\\", "/"))
+
+    return f"Site criado com sucesso. Salvei em {pasta}."

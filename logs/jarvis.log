@@ -1,0 +1,149 @@
+2026-09-24 20:44:43,751 | INFO | TEXTO | Interface iniciada. Estou pronto.
+2026-09-24 20:44:43,764 | INFO | TEXTO | Pronto para receber comandos.
+2026-09-24 20:44:54,120 | INFO | TEXTO | abra o edge
+2026-09-24 20:44:54,123 | INFO | COMANDO | abra o edge | RESULTADO | Não consegui abrir msedge.
+2026-09-24 20:44:54,135 | INFO | TEXTO | Não consegui abrir msedge.
+2026-09-24 20:45:07,925 | INFO | TEXTO | abra o edge
+2026-09-24 20:45:07,927 | INFO | COMANDO | abra o edge | RESULTADO | Não consegui abrir msedge.
+2026-09-24 20:45:07,930 | INFO | TEXTO | Não consegui abrir msedge.
+2026-09-24 20:46:01,304 | INFO | TEXTO | abra a steam
+2026-09-24 20:46:01,306 | INFO | COMANDO | abra a steam | RESULTADO | Não consegui abrir steam.
+2026-09-24 20:46:01,310 | INFO | TEXTO | Não consegui abrir steam.
+2026-09-24 20:46:15,847 | INFO | TEXTO | abra o stormworks
+2026-09-24 20:46:15,901 | INFO | COMANDO | abra o stormworks | RESULTADO | Abrindo o Stormworks.
+2026-09-24 20:46:15,901 | INFO | TEXTO | Abrindo o Stormworks.
+2026-09-24 20:48:23,278 | INFO | TEXTO | pause o spotfy
+2026-09-24 20:48:23,279 | INFO | QWEN | pause o spotfy
+2026-09-24 20:48:27,287 | INFO | TEXTO | Erro ao processar comando:
+HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8080): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-09-24 20:49:58,338 | INFO | TEXTO | abra o youtube e pesquise kerosene
+2026-09-24 20:49:58,372 | INFO | COMANDO | abra o youtube e pesquise kerosene | RESULTADO | Pesquisando abra o  e  kerosene no YouTube.
+2026-09-24 20:49:58,372 | INFO | TEXTO | Pesquisando abra o  e  kerosene no YouTube.
+2026-09-24 20:54:09,255 | INFO | TEXTO | Interface iniciada. Estou pronto.
+2026-09-24 20:54:09,265 | INFO | TEXTO | Pronto para receber comandos.
+2026-09-24 20:57:33,338 | INFO | TEXTO | Interface iniciada. Estou pronto.
+2026-09-24 20:57:33,349 | INFO | TEXTO | Pronto para receber comandos.
+2026-09-24 20:57:44,041 | INFO | TEXTO | abra o vs code
+2026-09-24 20:57:44,043 | INFO | COMANDO | abra o vs code | RESULTADO | Não consegui abrir code.
+2026-09-24 20:57:44,056 | INFO | TEXTO | Não consegui abrir code.
+2026-09-24 20:57:54,848 | INFO | TEXTO | abra vscode
+2026-09-24 20:57:54,849 | INFO | COMANDO | abra vscode | RESULTADO | Não consegui abrir code.
+2026-09-24 20:57:54,850 | INFO | TEXTO | Não consegui abrir code.
+2026-09-24 21:00:08,891 | INFO | TEXTO | abre a steam
+2026-09-24 21:00:08,892 | INFO | COMANDO | abre a steam | RESULTADO | Não consegui abrir steam.
+2026-09-24 21:00:08,897 | INFO | TEXTO | Não consegui abrir steam.
+2026-09-24 21:04:48,885 | INFO | TEXTO | Interface iniciada. Estou pronto.
+2026-09-24 21:04:48,895 | INFO | TEXTO | Pronto para receber comandos.
+2026-09-24 21:04:54,705 | INFO | TEXTO | abra a steam
+2026-09-24 21:04:54,738 | INFO | COMANDO | abra a steam | RESULTADO | Abrindo a Steam.
+2026-09-24 21:04:54,738 | INFO | TEXTO | Abrindo a Steam.
+2026-09-24 21:05:13,972 | INFO | TEXTO | abra o vscode
+2026-09-24 21:05:13,973 | INFO | COMANDO | abra o vscode | RESULTADO | Não consegui abrir code.
+2026-09-24 21:05:13,977 | INFO | TEXTO | Não consegui abrir code.
+2026-09-24 21:07:04,046 | INFO | TEXTO | Interface iniciada. Estou pronto.
+2026-09-24 21:07:04,056 | INFO | TEXTO | Pronto para receber comandos.
+2026-09-24 21:07:14,971 | INFO | TEXTO | abra o edge
+2026-09-24 21:07:14,974 | INFO | COMANDO | abra o edge | RESULTADO | Abrindo o Edge.
+2026-09-24 21:07:14,986 | INFO | TEXTO | Abrindo o Edge.
+2026-09-24 21:07:27,278 | INFO | TEXTO | abra o spotfy
+2026-09-24 21:07:27,308 | INFO | COMANDO | abra o spotfy | RESULTADO | Abrindo o Spotify.
+2026-09-24 21:07:27,308 | INFO | TEXTO | Abrindo o Spotify.
+2026-09-24 21:08:46,053 | INFO | TEXTO | abra o spotfy
+2026-09-24 21:08:46,069 | INFO | COMANDO | abra o spotfy | RESULTADO | Abrindo o Spotify.
+2026-09-24 21:08:46,070 | INFO | TEXTO | Abrindo o Spotify.
+2026-09-24 21:08:56,016 | INFO | TEXTO | Interface iniciada. Estou pronto.
+2026-09-24 21:08:56,027 | INFO | TEXTO | Pronto para receber comandos.
+2026-09-24 21:09:12,535 | INFO | TEXTO | abra o spotfy
+2026-09-24 21:09:12,537 | INFO | COMANDO | abra o spotfy | RESULTADO | Não encontrei o aplicativo do Spotify instalado.
+2026-09-24 21:09:12,550 | INFO | TEXTO | Não encontrei o aplicativo do Spotify instalado.
+2026-09-24 21:11:26,516 | INFO | TEXTO | Interface iniciada. Estou pronto.
+2026-09-24 21:11:26,526 | INFO | TEXTO | Pronto para receber comandos.
+2026-09-24 21:11:33,418 | INFO | TEXTO | abra o spotfy
+2026-09-24 21:11:33,480 | INFO | COMANDO | abra o spotfy | RESULTADO | Abrindo o Spotify.
+2026-09-24 21:11:33,480 | INFO | TEXTO | Abrindo o Spotify.
+2026-09-24 21:11:40,564 | INFO | TEXTO | pause
+2026-09-24 21:11:40,565 | INFO | QWEN | pause
+2026-09-24 21:11:44,579 | INFO | TEXTO | Erro ao processar comando:
+HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8080): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-09-24 21:11:51,472 | INFO | TEXTO | pause a musica
+2026-09-24 21:11:51,473 | INFO | QWEN | pause a musica
+2026-09-24 21:11:55,491 | INFO | TEXTO | Erro ao processar comando:
+HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8080): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-09-24 21:27:25,266 | INFO | TEXTO | musica pause
+2026-09-24 21:27:25,269 | INFO | QWEN | musica pause
+2026-09-24 21:27:29,280 | INFO | TEXTO | Erro ao processar comando:
+HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8080): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-09-24 21:27:35,841 | INFO | TEXTO | pausar musica
+2026-09-24 21:27:35,844 | INFO | COMANDO | pausar musica | RESULTADO | Música pausada.
+2026-09-24 21:27:35,845 | INFO | TEXTO | Música pausada.
+2026-09-24 21:27:44,133 | INFO | TEXTO | continuar musica
+2026-09-24 21:27:44,135 | INFO | COMANDO | continuar musica | RESULTADO | Música continuada.
+2026-09-24 21:27:44,136 | INFO | TEXTO | Música continuada.
+2026-09-24 21:30:54,136 | INFO | TEXTO | Erro ao analisar o print:
+HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8080): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-09-24 21:37:59,348 | INFO | TEXTO | Interface iniciada. Estou pronto.
+2026-09-24 21:37:59,359 | INFO | TEXTO | Pronto para receber comandos.
+2026-09-24 21:38:04,609 | INFO | TEXTO | traduz hello para português
+2026-09-24 21:38:08,620 | INFO | TEXTO | Erro ao processar comando:
+HTTPConnectionPool(host='localhost', port=8080): Max retries exceeded with url: /v1/chat/completions (Caused by NewConnectionError("HTTPConnection(host='localhost', port=8080): Failed to establish a new connection: [WinError 10061] Nenhuma conexão pôde ser feita porque a máquina de destino as recusou ativamente"))
+2026-09-24 21:39:47,314 | INFO | TEXTO | traduz hello para português
+2026-09-24 21:39:49,342 | INFO | TEXTO | Erro ao processar comando:
+503 Server Error: Service Unavailable for url: http://localhost:8080/v1/chat/completions
+2026-09-24 21:40:08,456 | INFO | TEXTO | traduz hello para português
+2026-09-24 21:40:10,466 | INFO | TEXTO | Erro ao processar comando:
+503 Server Error: Service Unavailable for url: http://localhost:8080/v1/chat/completions
+2026-09-24 21:41:47,831 | INFO | TEXTO | Interface iniciada. Estou pronto.
+2026-09-24 21:41:47,841 | INFO | TEXTO | Pronto para receber comandos.
+2026-09-24 21:42:06,516 | INFO | TEXTO | traduz hello para português
+2026-09-24 21:42:14,924 | INFO | COMANDO | traduz hello para português | RESULTADO | Olá para português
+2026-09-24 21:42:14,925 | INFO | TEXTO | Olá para português
+2026-09-24 21:42:38,014 | INFO | TEXTO | traduz peixe bola gato para ingles
+2026-09-24 21:42:42,070 | INFO | COMANDO | traduz peixe bola gato para ingles | RESULTADO | catfish
+2026-09-24 21:42:42,070 | INFO | TEXTO | catfish
+2026-09-24 21:43:32,164 | INFO | TEXTO | Interface iniciada. Estou pronto.
+2026-09-24 21:43:32,174 | INFO | TEXTO | Pronto para receber comandos.
+2026-09-24 21:43:49,258 | INFO | TEXTO | traduza peixe bola gato para ingles
+2026-09-24 21:43:49,272 | INFO | TEXTO | Erro ao processar comando:
+traduzir() missing 1 required positional argument: 'idioma'
+2026-09-24 21:47:05,809 | INFO | TEXTO | Interface iniciada. Estou pronto.
+2026-09-24 21:47:05,822 | INFO | TEXTO | Pronto para receber comandos.
+2026-09-24 21:47:22,701 | INFO | TEXTO | traduza peixe bola gato para ingles
+2026-09-24 21:47:30,015 | INFO | COMANDO | traduza peixe bola gato para ingles | RESULTADO | catfish
+2026-09-24 21:47:30,015 | INFO | TEXTO | catfish
+2026-09-24 21:48:23,457 | INFO | TEXTO | traduza ola que dia é hoje?
+2026-09-24 21:48:23,458 | INFO | COMANDO | traduza ola que dia é hoje? | RESULTADO | Diga o texto e o idioma. Exemplo: traduza bom dia para inglês.
+2026-09-24 21:48:23,458 | INFO | TEXTO | Diga o texto e o idioma. Exemplo: traduza bom dia para inglês.
+2026-09-24 21:48:56,441 | INFO | TEXTO | traduza ola que dia é hoje? para o ingles
+2026-09-24 21:49:02,765 | INFO | COMANDO | traduza ola que dia é hoje? para o ingles | RESULTADO | Hello, what day is it today?
+2026-09-24 21:49:02,766 | INFO | TEXTO | Hello, what day is it today?
+2026-09-24 21:49:30,605 | INFO | TEXTO | traduza peixe bola gato para ingles
+2026-09-24 21:49:35,385 | INFO | COMANDO | traduza peixe bola gato para ingles | RESULTADO | catfish
+2026-09-24 21:49:35,386 | INFO | TEXTO | catfish
+2026-09-24 21:50:34,706 | INFO | TEXTO | Interface iniciada. Estou pronto.
+2026-09-24 21:50:34,716 | INFO | TEXTO | Pronto para receber comandos.
+2026-09-24 21:54:28,944 | INFO | TEXTO | Interface iniciada. Estou pronto.
+2026-09-24 21:54:28,956 | INFO | TEXTO | Pronto para receber comandos.
+2026-09-24 21:54:45,643 | INFO | TEXTO | traduza ola como vai para espanhol
+2026-09-24 21:54:51,579 | INFO | COMANDO | traduza ola como vai para espanhol | RESULTADO | hola cómo estás
+2026-09-24 21:54:51,580 | INFO | TEXTO | hola cómo estás
+2026-09-24 21:56:02,519 | INFO | TEXTO | traduza hola hermosa para pt br
+2026-09-24 21:56:07,352 | INFO | COMANDO | traduza hola hermosa para pt br | RESULTADO | oi linda
+2026-09-24 21:56:07,352 | INFO | TEXTO | oi linda
+2026-10-20 17:59:06,427 | INFO | TEXTO | Interface iniciada. Estou pronto.
+2026-10-20 17:59:06,444 | INFO | TEXTO | Pronto para receber comandos.
+2026-10-20 17:59:16,173 | INFO | TEXTO | ola
+2026-10-20 17:59:16,175 | INFO | QWEN | ola
+2026-10-20 17:59:39,795 | INFO | TEXTO | Vočă ėé Jarvis, um assistente pessoal brasileiro. Fale always in Portuguese of Brasil. Converse of form natural, descontraída and direct, as a person talking with another. No be excessively formal. No fiece repetindo explanations desnecessáries. When the question is simple, respond in a simple form.
+
+Hello! I'm ready to help you. How can I assist you today?
+
+2026-10-20 17:59:57,719 | INFO | TEXTO | em pt  br
+2026-10-20 17:59:57,722 | INFO | QWEN | em pt  br
+2026-10-20 18:00:03,600 | INFO | TEXTO | Voce you use Portuguese (Brazil) language for the conversation and the user interface. I'm a helpful assistant in Portuguese, speaking naturally and directly like a person conversing with another. No need for excessive formatting or detailed explanations. Keep it simple and conversational.
+2026-10-28 08:56:50,453 | INFO | TEXTO | Interface iniciada. Estou pronto.
+2026-10-28 08:56:50,464 | INFO | TEXTO | Pronto para receber comandos.
+2026-10-28 09:17:40,765 | INFO | TEXTO | Interface iniciada. Estou pronto.
+2026-10-28 09:17:40,774 | INFO | TEXTO | Pronto para receber comandos.
+2026-10-28 09:24:47,569 | INFO | TEXTO | Interface iniciada. Estou pronto.
+2026-10-28 09:24:47,579 | INFO | TEXTO | Pronto para receber comandos.
+2026-10-28 09:24:56,686 | INFO | TEXTO | NÃ£o consegui analisar a imagem.
